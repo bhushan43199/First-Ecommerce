@@ -13,4 +13,6 @@ export class SliderComponent implements OnInit {
     
   }
 
+  images = ['https://sham.hussam3bd.com/dist/images/slides/01.jpg','https://sham.hussam3bd.com/dist/images/slides/03.jpg','https://sham.hussam3bd.com/dist/images/slides/02.jpg'];
+
 }

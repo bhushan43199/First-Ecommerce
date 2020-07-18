@@ -1,8 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PriceListComponent } from './Shared Components/price-list/price-list.component';
+import { SwitchComponent } from './Shared Components/switch/switch.component';
+import { InputStringComponent } from './Shared Components/input-string/input-string.component';
 
 
-const routes: Routes = [];
+
+
+
+const routes: Routes = [
+  {
+    path : 'price',
+    component: PriceListComponent
+  },
+  {
+    path : 'switch',
+    component: SwitchComponent
+  },
+  {
+    path : 'input',
+    component: InputStringComponent
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

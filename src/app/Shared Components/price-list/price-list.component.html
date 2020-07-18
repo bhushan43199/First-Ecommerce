@@ -1,0 +1,42 @@
+<div class="order">
+	<h2>Products for Sale</h2>
+
+	<div class="form-group">
+		<select class="custom-select" [(ngModel)]="order" placeholder ="Sort Products">
+    <option value="Product">Product</option>
+    <option value="value">Price</option>
+    <option value="Discount">Discount</option>
+  </select>
+	</div>
+	<div class="form-group">
+		<div class="custom-control custom-checkbox">
+			<input type="checkbox" class="custom-control-input" [(ngModel)]="reverse" id="reverse" />
+			<label class="custom-control-label" for="reverse">reverse?</label>
+		</div>
+	</div>
+	<h4>Search Products </h4>
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Search Product" [(ngModel)]="search"/>
+	</div>
+
+	<table class="table" >
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Image</th>
+				<th>Price</th>
+				<th>Discount</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr *ngFor="let item of items | orderBy : order : reverse | search : search ">
+				<td>{{item.Product}}</td>
+				<td><img src="{{item.image}}"/></td>
+				<td>{{item.Price}}</td>
+				<td>{{item.Discount}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>

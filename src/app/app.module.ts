@@ -19,6 +19,9 @@ import { PriceListComponent } from './Shared Components/price-list/price-list.co
 import { TableSortPipe } from './Shared Components/table-sort.pipe';
 import { MyOrderByPipe } from './Shared Components/sort.pipe';
 import { SearchPipe } from './Shared Components/search.pipe';
+import { SigninComponent } from './Shared Components/signin/signin.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { SearchPipe } from './Shared Components/search.pipe';
     PriceListComponent,
     TableSortPipe,
     MyOrderByPipe,
-    SearchPipe
+    SearchPipe,
+    SigninComponent,
+    
   ],
   imports: [
     BrowserModule,

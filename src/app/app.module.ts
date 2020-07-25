@@ -20,6 +20,8 @@ import { TableSortPipe } from './Shared Components/table-sort.pipe';
 import { MyOrderByPipe } from './Shared Components/sort.pipe';
 import { SearchPipe } from './Shared Components/search.pipe';
 import { SigninComponent } from './Shared Components/signin/signin.component';
+import { HomeComponent } from './Shared Components/home/home.component';
+import {LoginServiceService} from './Shared Components/signin/login-service.service';
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { SigninComponent } from './Shared Components/signin/signin.component';
     MyOrderByPipe,
     SearchPipe,
     SigninComponent,
+    HomeComponent,
     
   ],
   imports: [
@@ -46,7 +49,7 @@ import { SigninComponent } from './Shared Components/signin/signin.component';
     ReactiveFormsModule,
     
   ],
-  providers: [MyOrderByPipe, SearchPipe],
+  providers: [MyOrderByPipe, SearchPipe,LoginServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
+import { LoginDataDTO } from './model';
+import { LoginServiceService } from './login-service.service';
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-signin',
@@ -8,12 +12,13 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+username :LoginDataDTO;
 
-  ngOnInit(): void {
-  }
 
-  signin= new FormGroup({
+  /* constructor() { } */   
+
+  
+ /*  signin= new FormGroup({
 
     username:new FormControl('', Validators.required),
     password: new FormControl('')
@@ -28,5 +33,25 @@ export class SigninComponent implements OnInit {
   }
 
   get email(){return this.signin.get('email')}
+
+}
+ */
+
+ /* ----------------Using Services------------------------------------------------------------------------------ */
+
+ promiseUsers: LoginDataDTO[] = [];
+
+
+ constructor(private loginservice: LoginServiceService,private router:Router) {}
+ ngOnInit(){
+}
+
+ login(username: LoginDataDTO) {    
+  this.loginservice.send(username);
+  if(username){
+    console.log(username)
+    this.router.navigate(['/homepage']);
+  }
+}
 
 }
